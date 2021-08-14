@@ -1,0 +1,12 @@
+THIS COMMAND IS FOR PYTHON ONLY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def get_yo_momma():
+  response = requests.get("https://api.yomomma.info/")
+  json_data = json.loads(response.text)
+  yo_momma = json_data['joke']
+  return (yo_momma)
+
+@client.command()
+async def yomomma(ctx):
+  yo_momma = get_yo_momma()
+  await ctx.send(yo_momma)
